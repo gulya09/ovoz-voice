@@ -40,13 +40,6 @@ async def start_command(message:Message):
         await message.answer(text="Assalomu alaykum")
 
 
-# import pprint
-# @dp.message()
-# async def get_file_id(message:Message):
-#     audio_id = message.voice.file_id
-#     # pprint.pprint(audio_id)
-#     await message.answer(f"file_id = {audio_id}")
-
 
 @dp.inline_query()
 async def inline_voice_search(inline_query: InlineQuery):
@@ -66,26 +59,7 @@ async def inline_voice_search(inline_query: InlineQuery):
 @dp.inline_query()
 async def inline_search(inline_query: InlineQuery):
     
-    #artikl yuborish
-    # result =[
-    #     InlineQueryResultArticle(
-    #         id="1",
-    #         title="Sifat",
-    #         input_message_content=InputTextMessageContent(
-    #             message_text="Bu sifat o'quv markazi. Navoiyda joylashgan"
-    #         ),
-    #         description="Ajoyib o'quv markazi"
-    #     ),
-    #     InlineQueryResultArticle(
-    #         id="2",
-    #         title="IT IELTS SCHOOL",
-    #         input_message_content=InputTextMessageContent(
-    #             message_text="Bu IT IELTS SCHOOL o'quv markazi. Navoiyda joylashgan"
-    #         ),
-    #         description="THE BEST"
-    #     )
-    # ]
-
+    
     try:
         text = inline_query.query
         photos = await fetch_inline_search_images(text, count=20)
